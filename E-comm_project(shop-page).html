@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>MC</title>
+    <style>
+      #complete_grid{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            /* grid-template-rows: repeat(4,1fr); */
+            grid-gap:10px;
+        }
+        .collection{
+            width:100%;
+            height:450px;
+        }
+        #filter_sidebar{
+          width:20%;
+          /* display:grid;
+           */
+          position: fixed;
+          top:0;
+          right:0px;
+          height:100vh;
+          
+          background-color: white;
+          box-shadow: 0 40px 60px rgba(0,0,0,0.1);
+          margin:56px 0px 80px 80px;
+          padding:80px 0px 0px 0px;
+        }
+
+        #side_bar{
+        display: flex;
+        position: fixed;
+        right: -300px;
+        background-color:white;
+        box-shadow: 0 40px 60px rgba(0,0,0,0.4);
+        height: 100vh;
+      }
+      #side_bar.active{
+        transition: 0.2s;
+        right: 0px;
+      }
+      #side_bar.deactive{ 
+        transition: 0.2s;
+        right: -300px;
+      }
+
+
+      *:hover{
+        cursor:default;
+      }
+        /* .buy_button{
+            width:100%;
+            height: 10%;
+            background-image: url(https://tse1.mm.bing.net/th?id=OIP.gs4lnjgXVxX7z6FwN8HcqwHaCR&pid=Api&rs=1&c=1&qlt=95&w=302&h=92);
+            padding: 0;
+            border: none;
+            font-weight: bold;
+            background-color: white;
+            background-size:contain;
+            background-repeat: no-repeat;
+            background-position:center
+            
+            
+        } */
+        .collection{
+            width:100%;
+            height:450px;
+        }
+
+        .zoom:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transition-duration: 0.2s;
+  transform: scale(1.04); 
+ 
+}
+
+.collection_text:hover,.text:hover{
+          transition-duration: 0.2s;
+          font-weight: bold;
+        }
+        @media(max-width: 575.98px){
+          #complete_grid{
+            display: grid;
+            grid-template-columns: repeat(1,1fr);
+            /* grid-template-rows: repeat(4,1fr); */
+            grid-gap:10px;
+        }
+
+        #filter_sidebar{
+          width:40%;
+          /* display:grid;
+           */
+          position: fixed;
+          top:0;
+          right:0px;
+          height:100vh;
+          
+          background-color: white;
+          box-shadow: 0 40px 60px rgba(0,0,0,0.1);
+          margin:56px 0px 80px 80px;
+          padding:80px 0px 0px 0px;
+        }
+        }
+    </style>
+  </head>
+  <body class="p-0 m-0 ">
+    <!-- As a link -->
+  <nav id="free_shipment" class="nav  navbar-light  bg-warning sticky-top ">
+    <div class="mx-auto" style="text-align: center;">
+        <p class="text-uppercase p-2 m-2">where you find clothing along with styling</p>
+    </div>
+  </nav>
+
+
+  <nav id="nav_bar" class="navbar navbar-expand-lg navbar-dark  sticky-top " style="position:sticky; background-color: gray; ">
+    <div class="container-fluid">
+      <a class="zoom navbar-brand p-1"  href="#"><img class="m-0" style="height: 60px;" src="https://i.ibb.co/QJ6wgbk/Color-logo-no-background.png"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+          <li class="nav-item ">
+            <a class="nav-link " aria-current="page" href="index.html">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="E-comm_project(shirts-page).html">SHIRTS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="E-comm_project(Sweatshirts-page).html">SWEATSHIRTS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="E-comm_project(shop-page).html">SHOP</a>
+          </li>
+         
+
+          <li class="nav-item">
+            <a class="nav-link" href="E-comm_project(Contact us-page).html">CONTACT</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <section id="side_bar" >
+    <section class="w-100 p-4">
+      <div id="clear_sidebar" class="w-100 "><img  align="right" src="https://cdn.onlinewebfonts.com/svg/img_403614.png" style="width: 28px; " ></div><br><br>
+      <h1>Filter</h1>
+    <hr><br>
+    <!-- <a>Availability</a><br><br>
+    <a>Product type</a><br><br>
+    <a>Size</a><br> -->
+    <p>Sort By:
+      <select  class="" name="Sort_by" id="Sort_by">
+          <!--here by default no card to be selected so we leave by blank-->
+      <option value=""></option>
+      <option value="Alphabetically,A-Z">Alphabetically,A-Z</option>
+      <option value="Alphabetically,Z-A">Alphabetically,Z-A</option>
+      <option value="PRICE,LOW-HIGH">PRICE,LOW-HIGH</option>
+      <option value="PRICE,HIGH-LOW">PRICE,HIGH-LOW</option>
+      </select>
+  </p>
+    </section>
+  </section>
+  <div  class="m-4 ">
+    <h1 class="m-2">Shop</h1>
+  <ul>
+    <li>Shirts</li>
+    <li>Sweatshirts</li>
+  </ul>
+  </div>
+  
+  <section>
+    <section class="row m-1 p-4 ">
+      <div class="col ">
+        <h4 id="filter" class="text border-0  rounded bg-transparent"><img class="zoom  m-1 bg-transparent" style="width:20px; height: 20px; align-items: flex-end;" src="https://cdn-icons-png.flaticon.com/512/6488/6488674.png">Filter</h4>
+      </div>
+      <div class="col offset-1 text-center"><img style="height: 60px;" src="https://i.ibb.co/9WrL3Y0/Black-logo-no-background.png" class="zoom"></div>
+      <div class="col ">
+      
+      </div>
+      <div id="noofproducts" class="col py-0"></div>
+    </section>
+
+
+    <section id="complete_grid" class="row m-0 p-2" >
+    
+    </section>
+
+
+  </section>
+  
+
+
+  <!-- As a link -->
+  <nav id="footer" class="navbar  navbar text-light bg-dark p-2">
+
+   
+
+
+    <div class="container row">
+
+       <div class="col-lg-4 text-center mb-4 text-center">
+      <img src="https://i.ibb.co/QjLGztp/White-logo-no-background.png" style="height:100px">
+    </div>
+        <div id="find_us_on" class="col-lg-2  mb-4">
+            <h4>Find us on</h4>
+            <a class="text" href="https://www.facebook.com/profile.php?id=100087419500577" style="text-decoration: none; color: white;"><img src="https://i.ibb.co/cQzLTC1/icons8-facebook-48.png" alt="...." style="height:22px" class="m-1">FACEBOOK</a><br>
+            <a class="text" href="https://www.instagram.com/ajayfromayejude/" style="text-decoration: none; color: white;"><img src="https://i.ibb.co/mS1xsCq/Pngtree-instagram-icon-8704817.png" style="height:20px" class="m-1">INSTAGRAM</a><br>
+            <a class="text" href="https://www.youtube.com/ayejude" style="text-decoration: none; color: white;"><img src="https://i.ibb.co/3cMbk7H/icons8-youtube-48.png" style="height:20px" class="m-1 ">YOUTUBE</a><br>
+        </div>
+       
+        <div id="Help_&_Support" class="col-lg-2 mb-4">
+            <h4>Help&Support</h4>
+            <a style="text-decoration: none; color: white;" href="E-comm_project(refund).html" class="text">Refund</a><br>
+            <a style="text-decoration: none; color: white;" href="E-comm_project(terms&conditions).html" class="text">Terms&Conditions</a><br>
+            <a style="text-decoration: none; color: white;" href="E-comm_project(shipping).html" class="text">Shipping</a>
+        </div>
+       
+    </div>
+  </nav>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="E-comm_project(shop-page(JS)).js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>

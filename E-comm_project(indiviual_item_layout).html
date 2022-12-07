@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>MC</title>
+    <style>
+      .zoom:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transition-duration: 0.2s;
+  transform: scale(1.04); 
+  cursor: pointer;
+}
+.zoomm:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transition-duration: 0.2s;
+  transform: scale(1.5); 
+ 
+}
+
+
+.collection_text:hover,.text:hover{
+          transition-duration: 0.2s;
+          font-weight: bold;
+        }
+       *:hover{
+        cursor:default;
+      }
+        .row{
+            margin: 2%;
+        }
+        .complete_grid {
+          height:500px;
+        }
+        .complete_grid .left_part{
+          height:500px;
+        }
+        .complete_grid .left_part .left_part_row1
+        {
+          height:500px;
+        }
+        .complete_grid .left_part .left_part_row2{
+          height:100px;
+        }
+        .complete_grid .right_part{
+          height:500px;
+        }
+        #Small.active,#Medium.active,#Large.active,#XL.active,#DXL.active{
+          background-color:black;
+          color: white;
+          /* text-transform: uppercase; */
+        }
+        .right_part::-webkit-scrollbar {
+          display: none;
+        }
+        .multiple_pics::-webkit-scrollbar {
+          display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .right_part {
+          -ms-overflow-style: none; 
+           scrollbar-width: none;  
+        }
+        .multiple_pics {
+          -ms-overflow-style: none; 
+           scrollbar-width: none;  
+        }
+        .buy_button{
+              width:100%;
+              height: 10%;
+              background-image: url(https://tse1.mm.bing.net/th?id=OIP.gs4lnjgXVxX7z6FwN8HcqwHaCR&pid=Api&rs=1&c=1&qlt=95&w=302&h=92);
+              padding: 0;
+              border: none;
+              font-weight: bold;
+              background-color: white;
+              background-size:contain;
+              background-repeat: no-repeat;
+              background-position:center
+              /* background-size:initial; */
+              
+          }
+          .collection{
+              width:100%;
+              height:450px;
+          }
+        #filter_sidebar{
+          /* display:grid;
+           */
+          position: fixed;
+          top:0;
+          right:10px;
+          height:100%;
+          
+          background-color: white;
+          box-shadow: 0 40px 60px rgba(0,0,0,0.1);
+          margin:56px 0px 80px 80px;
+          padding:80px 0px 0px 0px;
+        }
+
+        #side_bar{
+        display: flex;
+        position: fixed;
+        right: -300px;
+        background-color:white;
+        box-shadow: 0 40px 60px rgba(0,0,0,0.4);
+        height: 100vh;
+      }
+      #carouselExampleIndicators{
+        height: 90%;
+        width: 90%;
+        padding:2% 2%;
+      }
+      #ayejude{
+       
+        padding-top: 12%;
+        padding-bottom: 10%;
+      }
+      /* *{
+        padding: 5px;
+      } */
+      #popup_buy{
+        display: flex;
+        position:fixed;
+        right: -100%;
+        width: 60%;
+        /* height: 50%; */
+        /* height:100px; */
+      }
+      #popup_buy.active{
+        transition: 0.4s;
+        right:20%;
+        top:10%;
+        /* bottom:90%; */
+        /* height:50%; */
+      }
+      @media (max-width: 575.98px) {
+        .complete_grid {
+          height:300px;
+        }
+        .complete_grid .left_part{
+          height:300px;
+        }
+        .complete_grid .left_part .left_part_row1
+        {
+          height:300px;
+        }
+        .complete_grid .left_part .left_part_row2{
+          height:300px;
+        }
+        .complete_grid .right_part{
+          height:500px;
+        }
+        #size{
+          font-size: 60%;
+        }
+        #quantity{
+          width: 50%;
+          padding-left: 0;
+          margin-left: 0;
+        }
+        #popup_buy{
+        display: flex;
+        position:fixed;
+        right: -100%;
+        width: 60%;
+        /* height: 50%; */
+        /* height:100px; */
+      }
+      #popup_buy.active{
+        transition: 0.4s;
+        right:20%;
+        top:10%;
+        /* bottom:90%; */
+        /* height:50%; */
+      }
+      }
+      </style>
+  </head>
+  <body id="body">
+    <!-- As a link -->
+    
+
+    <nav id="free_shipment" class="nav  navbar-light  bg-warning sticky-top ">
+      <div class="mx-auto" style="text-align: center;">
+          <p class="text-uppercase p-2 m-2">where you find clothing along with styling</p>
+      </div>
+    </nav>
+  
+   
+  
+    <nav id="nav_bar" class="navbar navbar-expand-lg navbar-dark  sticky-top " style="position:sticky; background-color: gray; ">
+      <div class="container-fluid">
+        <a class="zoom navbar-brand p-1"  href="#"><img class="m-0" style="height: 60px;" src="https://i.ibb.co/QJ6wgbk/Color-logo-no-background.png"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+            <li class="nav-item ">
+              <a class="nav-link " aria-current="page" href="index.html">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="E-comm_project(shirts-page).html">SHIRTS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="E-comm_project(Sweatshirts-page).html">SWEATSHIRTS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="E-comm_project(shop-page).html">SHOP</a>
+            </li>
+           
+  
+            <li class="nav-item">
+              <a class="nav-link" href="E-comm_project(Contact us-page).html">CONTACT</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  
+ 
+  <div id="complete_g" class="complete_grid row ">
+    <div class="left_part col-lg-6 mb-2">
+        <div class="row" >
+            <div class=" multiple_pics col-3" style="padding:4%;">
+    <p></p>
+                <div class="row p-1">
+                    <img id="sub_img_1" class="zoom" src="">
+                </div>
+                <div class="row p-1">
+                    <img id="sub_img_2"  class="zoom"  src="">
+                </div>
+                <div class="row p-1">
+                    <img id="sub_img_3"  class="zoom"  src="">
+                </div>
+               
+            </div>
+            <div class="main_img col-9 p-1" style=" height:500px;" >
+                <div  class="row p-1" >
+                    
+                    <img id="main_img" src=""  alt="..." style="padding: 4%; height:100%; width:100%;" class="zoom" >
+                    <!-- <img > -->
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="right_part col-lg-6 py-0" style="padding:4%; overflow-y: scroll;">
+          <h1 id="shirt_name" class="my-4"></h1>
+          <span id="actual_price" style="text-decoration:line-through;"></span>
+          <span id="discount_price" class="fw-bolder"></span>
+          <p>Shipping calculated at checkout.</p>
+          <p>size</p>
+          <div id="size" class="select_size size row p-2">
+            <div id="Small" class="zoom col-2 text-center m-1 border border-1  border-dark rounded-pill">Small</div>
+            <div id="Medium" class="zoom col-2 text-center m-1 border border-1  border-dark  rounded-pill">Medium</div>
+            <div id="Large" class="zoom col-2 text-center m-1 border border-1  border-dark  rounded-pill">Large</div>
+            <div id="XL" class="zoom col-2  text-center m-1 border border-1  border-dark  rounded-pill">XL</div>
+            <div id="DXL" class="zoom col-2 text-center m-1 border border-1  border-dark  rounded-pill">2XL</div>
+          </div>
+          <p>Quantity</p>
+          <div class="row p-3 mb-0">
+            <div class="col-lg-4">
+              <div id="quantity" class="row border border-1 border-dark ">
+                  <button id="plus" class="col-3 border-0 ">+</button>
+                  <span id="number" class="col-6 text-center">1</span>
+                  <button id="minus" class="col-3 border-0">-</button>
+              </div>
+          </div>
+          </div>
+          <div class="row p-3 mt-0">
+            <div id="buy_now" class="zoom col border border-1  border-dark text-center bg-warning p-2">BUY NOW</div>
+            <div id="description_item" class="description py-4 px-0"></div>
+          </div>
+        </div>
+        <div class="mt-4"></div>
+        <div class="mt-4"></div>
+        <hr>
+    <section class="row">
+        <section class="col-lg-6">
+          <div id="carouselExampleIndicators" class="carousel slide " data-bs-ride="carousel">
+            <h1 class="zoom">Styling with Aye Jude</h1>
+          <p class="text-warning ">#Aye jude antey nenu kadu manam</p>
+          <div class="carousel-indicators ">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img id="styling_image1" src="..." class="d-block w-100 zoom" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img id="styling_image2" src="..." class="d-block w-100 zoom" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img id="styling_image3" src="..." class="d-block w-100 zoom" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img id="styling_image4" src="..." class="d-block w-100 zoom" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        </section>
+        <section id="ayejude" class="col-lg-6">
+          <h3>What Aye Jude and MC can bring you:</h3>
+          <h4 class="text-warning">How to Look and Feel Stylish </h4>
+          <hr>
+          <ul>
+            Discovering Your Style
+            <li>Have a reference point.</li>
+            <li>Dress to fit your lifestyle.</li>
+            <li>Act your style.</li>
+          </ul>
+          <ul>
+            Building Your Wardrobe
+            <li>Shop for outfits.</li>
+            <li>Buy quality that lasts.</li>
+            <li>Have foundation pieces.</li>
+          </ul>
+          <ul>
+            Impressing with Details
+            <li>Have a grooming regimen.</li>
+            <li>Accessorize your outfits.</li>
+            <li>Don't over-do it.</li>
+          </ul>
+        </section>
+    </section>
+   
+          
+        
+      <!-- <div class= "vertical"></div> -->
+        
+       
+
+        <section id="text_section" class="row py-2 ">
+          <div class="offset-lg-4 col-lg-4">
+            <div class="dropdown">
+              <div id="size_chart" class="zoom row text-light bg-dark mb-2 p-4">
+                <div class="col-11">Size Chart</div>
+                <div class="col-1"><img class="zoomm" id="img_PQ" src="https://www.freeiconspng.com/uploads/white-down-arrow-png-2.png" style="width:15px; height: 15px;"></div>
+              </div>
+              <div id="CARE_Instructions" class="zoom row text-light bg-dark mb-2 p-4">
+                <div class="col-11">CARE instructions</div>
+                <div class="col-1 "><img class="zoomm"
+                  id="img_ES" src="https://www.freeiconspng.com/uploads/white-down-arrow-png-2.png" style="width:15px; height: 15px;"></div>
+              </div>
+              <div id="SHIPPING" class="zoom row text-light bg-dark mb-2 p-4">
+                <div class="col-11">SHIPPING</div>
+                <div class="col-1"><img class="zoomm" id="shipping_img" src="https://www.freeiconspng.com/uploads/white-down-arrow-png-2.png" style="width:15px; height: 15px;"></div>
+              
+              </div>
+           
+          </div>
+      
+  </div>
+</section>
+
+
+  <!-- <section id="display_sweatshirts " class="row m-4">
+    <section id="sweatshirt_1" class="sweatshirts col">
+        <img  class="img-thumbnail" src="https://cdn.shopify.com/s/files/1/0551/8245/8983/products/photorealistic-crewneck-mockup-on-a-hanger-a9150_8d8d7cbe-9f53-4c82-96a6-3f662069a8ad.png?v=1666726167&width=1346" alt="this is an img" >
+        <a>Urban Saint Special Logo White Sweatshirt</a><br>
+        <span>Rs. 3,600.00</span><br>
+        <span>Rs. 2,600.00</span><br>
+        <button class="buy_button">Buy</button>
+    </section>
+    <section id="sweatshirt_2" class="sweatshirts col">
+        <img class="img-thumbnail" src="https://cdn.shopify.com/s/files/1/0551/8245/8983/products/photorealistic-crewneck-mockup-on-a-hanger-a9150_92d68d8f-aa0e-4cba-b50f-432d3d11b271.png?v=1666726280&width=1346" alt="this is an img">
+        <a>Urban Saint Special Logo Red Sweatshirt</a><br>
+        <span>Rs. 3,600.00</span><br>
+        <span>Rs. 2,600.00</span><br>
+        <button class="buy_button">Buy</button>
+    </section>
+    <section id="sweatshirt_3" class="sweatshirts col">
+        <img class="img-thumbnail" src="https://cdn.shopify.com/s/files/1/0551/8245/8983/products/photorealistic-crewneck-mockup-on-a-hanger-a9150_e899e52f-6c05-46bb-83bf-3eae9c0789c6.png?v=1666725929&width=1346" alt="this is an img">
+        <a>Urban Saint Special Logo Black Sweatshirt</a><br>
+        <span>Rs. 3,600.00</span><br>
+        <span>Rs. 2,600.00</span><br>
+        <button class="buy_button">Buy</button>
+    </section>
+    <section id="sweatshirt_4" class="sweatshirts col">
+        <img class="img-thumbnail" src="https://cdn.shopify.com/s/files/1/0551/8245/8983/products/photorealistic-crewneck-mockup-on-a-hanger-a9150_90a0d424-c06c-46af-88fe-02463d5ba133.png?v=1666722661&width=1346" alt="this is an img">
+        <a>Premium Unisex Crewneck Red Sweatshirt</a><br>
+        <span>Rs.3,600.00</span><br>
+        <span>Rs.1,900.00</span><br>
+        <button class="buy_button">Buy</button>
+    </section>
+  </section> -->
+
+
+
+  <nav id="footer" class="navbar  navbar text-light bg-dark p-2">
+
+   
+
+
+    <div class="container row">
+
+       <div class="col-lg-4 text-center mb-4 text-center">
+      <img src="https://i.ibb.co/QjLGztp/White-logo-no-background.png" style="height:100px">
+    </div>
+        <div id="find_us_on" class="col-lg-2  mb-4">
+            <h4>Find us on</h4>
+            <a class="text" href="https://www.facebook.com/profile.php?id=100087419500577" style="text-decoration: none; color: white;"><img src="https://i.ibb.co/cQzLTC1/icons8-facebook-48.png" alt="...." style="height:22px" class="m-1">FACEBOOK</a><br>
+            <a class="text" href="https://www.instagram.com/ajayfromayejude/" style="text-decoration: none; color: white;"><img src="https://i.ibb.co/mS1xsCq/Pngtree-instagram-icon-8704817.png" style="height:20px" class="m-1">INSTAGRAM</a><br>
+            <a class="text" href="https://www.youtube.com/ayejude" style="text-decoration: none; color: white;"><img src="https://i.ibb.co/3cMbk7H/icons8-youtube-48.png" style="height:20px" class="m-1 ">YOUTUBE</a><br>
+        </div>
+       
+        <div id="Help_&_Support" class="col-lg-2 mb-4">
+            <h4>Help&Support</h4>
+            <a style="text-decoration: none; color: white;" href="E-comm_project(refund).html" class="text">Refund</a><br>
+            <a style="text-decoration: none; color: white;" href="E-comm_project(terms&conditions).html" class="text">Terms&Conditions</a><br>
+            <a style="text-decoration: none; color: white;" href="E-comm_project(shipping).html" class="text">Shipping</a>
+        </div>
+       
+    </div>
+  </nav>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="E-comm_project(indiviual_item_layout(JS)).js"></script>
+  </body>
+</html>
