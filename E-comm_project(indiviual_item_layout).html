@@ -59,11 +59,18 @@
         .right_part::-webkit-scrollbar {
           display: none;
         }
+        #size_chart_append::-webkit-scrollbar {
+          display: none;
+        }
         .multiple_pics::-webkit-scrollbar {
           display: none;
         }
         /* Hide scrollbar for IE, Edge and Firefox */
         .right_part {
+          -ms-overflow-style: none; 
+           scrollbar-width: none;  
+        }
+        #size_chart_append{
           -ms-overflow-style: none; 
            scrollbar-width: none;  
         }
@@ -351,9 +358,10 @@
         <section id="text_section" class="row py-2 ">
           <div class="offset-lg-4 col-lg-4">
             <div class="dropdown">
-              <div id="size_chart" class="zoom row text-light bg-dark mb-2 p-4">
+              <div id="size_chart" class="zoom row text-light bg-dark mb-2 p-4" >
                 <div class="col-11">Size Chart</div>
                 <div class="col-1"><img class="zoomm" id="img_PQ" src="https://www.freeiconspng.com/uploads/white-down-arrow-png-2.png" style="width:15px; height: 15px;"></div>
+                <div class="p-2" id="size_chart_append" style="  overflow-x: scroll; "></div>
               </div>
               <div id="CARE_Instructions" class="zoom row text-light bg-dark mb-2 p-4">
                 <div class="col-11">CARE instructions</div>
