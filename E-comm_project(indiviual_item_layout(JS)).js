@@ -118,7 +118,7 @@ img_PQ.addEventListener('click',Size_chart)
                 img_PQ.src="http://www.clker.com/cliparts/z/z/h/C/V/5/up-white-arrow-hi.png"
                 let appendText=document.createElement("div");
                 appendText.id="appendText_PQ";
-                appendText.innerHTML=`<table class="table table-bordered text-light">
+                appendText.innerHTML=`<table class="table table-bordered text-light p-2">
                 <thead>
                   <tr>
                     <th scope="col"> Sizes</th>
@@ -148,7 +148,9 @@ img_PQ.addEventListener('click',Size_chart)
                   </tr>
                 </tbody>
               </table>`;
-                size_chart.append(appendText);
+              // appendText.className=`style="  overflow-x: scroll;"`;
+              // appendText_PQ.class=`style="  overflow-x: scroll;"`;
+              size_chart_append.append(appendText);
             }
             else if(img_PQ.src="http://www.clker.com/cliparts/z/z/h/C/V/5/up-white-arrow-hi.png"){
                 img_PQ.src="https://www.freeiconspng.com/uploads/white-down-arrow-png-2.png"
